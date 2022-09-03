@@ -6,7 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT;
 
 //req router
 const routerLinks = require("./routes/LRuta");
@@ -28,7 +28,7 @@ app.use("/api", routerTags);
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_CONNECT);
-    app.listen(port, (req, res) => {
+    app.listen(port || 5000, (req, res) => {
       console.log("Conectado en el puerto: ", port);
     });
   } catch (error) {
