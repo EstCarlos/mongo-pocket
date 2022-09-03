@@ -27,6 +27,7 @@ const getOneItem = async (req, res) => {
 const createData = async (req, res) => {
   try {
     const cr = await Links.create(req.body);
+
     res.status(201).json({ cr });
   } catch (error) {
     res.status(500).json({ message: error });
@@ -47,6 +48,8 @@ const deleteData = async (req, res) => {
     res.status(500).json({ message: error });
   }
 };
+
+const updateData = async () => {};
 
 module.exports = {
   getAllData,

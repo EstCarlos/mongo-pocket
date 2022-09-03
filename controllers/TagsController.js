@@ -25,7 +25,7 @@ const getOneItem = async (req, res) => {
 };
 
 const createData = async (req, res) => {
-  const find = Tags.find({}).count();
+  const find = Tags.find({}).count(5);
 
   try {
     const cr = await Tags.create(req.body);

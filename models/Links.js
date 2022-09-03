@@ -5,6 +5,11 @@ const LinksSchema = new mongoose.Schema({
     type: String,
     require: true,
     trim: true,
+    unique: true,
+  },
+  TagName: {
+    type: Array,
+    require: true,
   },
 });
 

@@ -28,7 +28,7 @@ app.use("/api", routerTags);
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_CONNECT);
-    app.listen(port || 5000, (req, res) => {
+    app.listen(port || 4000, (req, res) => {
       console.log("Conectado en el puerto: ", port);
     });
   } catch (error) {
